@@ -10,10 +10,10 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_shop_list"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_middle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -29,7 +29,23 @@
         android:contentDescription="@string/add_new_shop_item"
         android:focusable="true"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/guideline_middle"
         android:src="@android:drawable/ic_input_add"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_middle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.5" />
+
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/shop_item_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="@id/guideline_middle"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    
 </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
